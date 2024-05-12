@@ -25,12 +25,12 @@ function ThreeItemGridItem({
           }
           priority={priority}
           alt={item.title}
-          label={{
-            position: size === 'full' ? 'center' : 'bottom',
-            title: item.title as string,
-            amount: item.priceRange.maxVariantPrice.amount,
-            currencyCode: item.priceRange.maxVariantPrice.currencyCode
-          }}
+          // label={{
+          //   position: size === 'full' ? 'center' : 'bottom',
+          //   title: item.title as string,
+          //   amount: item.priceRange.maxVariantPrice.amount,
+          //   currencyCode: item.priceRange.maxVariantPrice.currencyCode
+          // }}
         />
       </Link>
     </div>
@@ -48,10 +48,21 @@ export async function ThreeItemGrid() {
   const [firstProduct, secondProduct, thirdProduct] = homepageItems;
 
   return (
-    <section className="mx-auto grid max-w-screen-2xl gap-4 px-4 pb-4 md:grid-cols-6 md:grid-rows-2">
-      <ThreeItemGridItem size="full" item={firstProduct} priority={true} />
-      <ThreeItemGridItem size="half" item={secondProduct} priority={true} />
-      <ThreeItemGridItem size="half" item={thirdProduct} />
+    <section className="mx-auto max-w-screen-xl px-4 pb-12 md:pb-20">
+      <div className="border-b border-gray-200 py-5 text-center">
+        <h2 className="text-title text-2xl font-bold md:text-4xl">新着商品</h2>
+      </div>
+      <div className="mt-5 flex overflow-x-auto md:mt-6 md:grid md:grid-cols-3 md:gap-6">
+        <div className="mr-4 flex w-10/12 flex-shrink-0 flex-col overflow-hidden md:mr-0 md:w-full">
+          <ThreeItemGridItem size="half" item={firstProduct} priority={true} />
+        </div>
+        <div className="mr-4 flex w-10/12 flex-shrink-0 flex-col overflow-hidden md:mr-0 md:w-full">
+          <ThreeItemGridItem size="half" item={secondProduct} priority={true} />
+        </div>
+        <div className="w-10/12 flex-shrink-0 flex-col overflow-hidden md:w-full">
+          <ThreeItemGridItem size="half" item={thirdProduct} />
+        </div>
+      </div>
     </section>
   );
 }

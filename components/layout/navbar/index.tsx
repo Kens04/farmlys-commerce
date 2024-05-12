@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import MobileMenu from './mobile-menu';
 import Search, { SearchSkeleton } from './search';
-const { SITE_NAME } = process.env;
+// const { SITE_NAME } = process.env;
 
 export default async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
@@ -19,13 +19,13 @@ export default async function Navbar() {
           <MobileMenu menu={menu} />
         </Suspense>
       </div>
-      <div className="flex w-full items-center">
-        <div className="flex w-full md:w-1/3">
+      <div className="flex w-full items-center justify-between">
+        <div className="flex w-full">
           <Link href="/" className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6">
-            <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
+            <LogoSquare size="md" />
+            {/* <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
               {SITE_NAME}
-            </div>
+            </div> */}
           </Link>
           {menu.length ? (
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
@@ -42,7 +42,7 @@ export default async function Navbar() {
             </ul>
           ) : null}
         </div>
-        <div className="hidden justify-center md:flex md:w-1/3">
+        <div className="hidden justify-center md:w-1/3">
           <Suspense fallback={<SearchSkeleton />}>
             <Search />
           </Suspense>

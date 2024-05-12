@@ -318,7 +318,7 @@ export async function getCollections(): Promise<Collection[]> {
   const collections = [
     {
       handle: '',
-      title: 'All',
+      title: '一覧',
       description: 'All products',
       seo: {
         title: 'All',

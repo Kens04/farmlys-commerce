@@ -1,3 +1,10 @@
+@import '@radix-ui/colors/grass.css';
+@import '@radix-ui/colors/grass-dark.css';
+@import '@radix-ui/colors/gray.css';
+@import '@radix-ui/colors/gray-dark.css';
+@import '@radix-ui/colors/tomato.css';
+@import '@radix-ui/colors/tomato-dark.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +19,43 @@
   img[loading='lazy'] {
     clip-path: inset(0.6px);
   }
+}
+
+.news-title {
+  color: var(--gray-12);
+}
+.news-title:hover {
+  color: var(--gray-10);
+}
+.text-title {
+  color: var(--gray-12);
+}
+.text-body {
+  color: var(--gray-11);
+}
+.text-error {
+  color: var(--tomato-11);
+}
+.input-border {
+  border: 1px solid var(--gray-7);
+}
+
+.button-bg {
+  background-color: var(--grass-9);
+}
+.button-bg:hover {
+  background-color: var(--grass-10);
+}
+.page-text {
+  color: var(--grass-12);
+}
+.page-text:hover {
+  color: var(--grass-11);
+}
+
+.title-bg {
+  color: #ffffff;
+  background-color: var(--grass-8);
 }
 
 a,
