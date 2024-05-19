@@ -52,6 +52,12 @@
 .page-text:hover {
   color: var(--grass-11);
 }
+.bg-green {
+  background-color: var(--grass-9);
+}
+.border-green:hover {
+  border-color: var(--grass-9);
+}
 
 .title-bg {
   color: #ffffff;

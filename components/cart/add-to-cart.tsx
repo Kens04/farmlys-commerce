@@ -17,13 +17,13 @@ function SubmitButton({
 }) {
   const { pending } = useFormStatus();
   const buttonClasses =
-    'relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white';
+    'bg-green relative flex w-full items-center justify-center rounded-full p-4 tracking-wide text-white';
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
 
   if (!availableForSale) {
     return (
       <button aria-disabled className={clsx(buttonClasses, disabledClasses)}>
-        Out Of Stock
+        売り切れ
       </button>
     );
   }
@@ -38,7 +38,7 @@ function SubmitButton({
         <div className="absolute left-0 ml-4">
           <PlusIcon className="h-5" />
         </div>
-        Add To Cart
+        カートに追加
       </button>
     );
   }
@@ -48,7 +48,7 @@ function SubmitButton({
       onClick={(e: React.FormEvent<HTMLButtonElement>) => {
         if (pending) e.preventDefault();
       }}
-      aria-label="Add to cart"
+      aria-label="カートに追加"
       aria-disabled={pending}
       className={clsx(buttonClasses, {
         'hover:opacity-90': true,
@@ -58,7 +58,7 @@ function SubmitButton({
       <div className="absolute left-0 ml-4">
         {pending ? <LoadingDots className="mb-3 bg-white" /> : <PlusIcon className="h-5" />}
       </div>
-      Add To Cart
+      カートに追加
     </button>
   );
 }
